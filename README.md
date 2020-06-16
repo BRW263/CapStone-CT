@@ -1,2 +1,2 @@
 # CapStone-CT
-Custom Tumblers CapStoene for PDX Code Guild
+Custom Tumblers CapStone for PDX Code Guild
