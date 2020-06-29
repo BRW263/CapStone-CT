@@ -26,6 +26,7 @@ def profile(request):
         'name': user.first_name,
         'picture': auth0user.extra_data['picture']
     }
+    
     return render(request, 'webapp/profile.html',{
         'auth0User': auth0user,
         'userdata': json.dumps(userdata, indent=4)

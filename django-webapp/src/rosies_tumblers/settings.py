@@ -121,8 +121,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# Auth settings
+# Auth0 settings
 SOCIAL_AUTH_TRAILING_SLASH = False # remove trailing slash from routes
+
 SOCIAL_AUTH_AUTH0_DOMAIN = '<ravenhawke5.us.auth0.com>'
 
 SOCIAL_AUTH_AUTH0_KEY = '<V2N6YgchwUFsVhhl13y6zEtsoG61Uurk>'
@@ -144,6 +145,6 @@ AUTHENTICATION_BACKENDS = {
 
 LOGIN_URL = '/login/auth0'
 
-LOGIN_REDIRECT_URL = '/dashboard'
+LOGIN_REDIRECT_URL = '/'
 
 LOGOUT_REDIRECT_URL = '/'
