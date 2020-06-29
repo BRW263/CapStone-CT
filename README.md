@@ -21,24 +21,48 @@ Building a Web App for users to buy pre-designed Tumblers and/or Design their ow
 
  5 will be the Contact page.
 
+## Process to Completion
+User (built into django)
+TumberSize
+    name (charfield)
+    image (imagefield)
+
+TumblerBackground
+    name (charfield)
+    image (imagefield)
+
+TumblerEffect
+    name (charfield)
+    image (imagefield)
+
+TumblerOrder
+    user (foreignkey to user)
+    size (foreignkey to tumblersize)
+    background (foreignkey to tumblerbackground)
+    effect (foreignkey to tumblereffect)
+    image (imagefield)
+
+PremadeTumblerOrder
+    name
+    image1
+    image2
+    image3
+    
+PremadeTumblerOrderImage
+    PremadeTumblerOrder (foreign key)
+
  ## Time line.
  Week 1.
-    Mon.
-    Tue.
-    Wed.
-    Thr.
-    Fri.
+   research payment systems?
+   user management system
+   make models, enter size/background/effect data
+
     
  Week 2.
-    Mon.
-    Tue.
-    Wed.
-    Thr.
-    Fri.
+   allow users to enter a order
+   style?
+   pre-made tumbler order?
 
  Week 3.
-    Mon.
-    Tue.
-    Wed.
-    Thr.
-    Fri.
+   more style?
+   better payment processing
