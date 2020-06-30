@@ -124,11 +124,11 @@ STATIC_URL = '/static/'
 # Auth0 settings
 SOCIAL_AUTH_TRAILING_SLASH = False # remove trailing slash from routes
 
-SOCIAL_AUTH_AUTH0_DOMAIN = '<ravenhawke5.us.auth0.com>'
+SOCIAL_AUTH_AUTH0_DOMAIN = 'ravenhawke5.us.auth0.com'
 
-SOCIAL_AUTH_AUTH0_KEY = '<V2N6YgchwUFsVhhl13y6zEtsoG61Uurk>'
+SOCIAL_AUTH_AUTH0_KEY = 'V2N6YgchwUFsVhhl13y6zEtsoG61Uurk'
 
-SOCIAL_AUTH_AUTH0_SECRET = '<oXZ4HlYIL32zpFIWPIPF1WztFVC4s9IWiru7Rfh4fwP-Am3qvTYhu_qqve2BdWCR>'
+SOCIAL_AUTH_AUTH0_SECRET = 'oXZ4HlYIL32zpFIWPIPF1WztFVC4s9IWiru7Rfh4fwP-Am3qvTYhu_qqve2BdWCR'
 
 SOCIAL_AUTH_AUTH0_SCOPE = [
     'openid',
