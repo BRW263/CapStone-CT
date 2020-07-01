@@ -1,5 +1,5 @@
 """
-WSGI config for wicked_life_tumblers project.
+WSGI config for wicked_life project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'wicked_life_tumblers.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'wicked_life.settings')
 
 application = get_wsgi_application()
