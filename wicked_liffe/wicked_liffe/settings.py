@@ -38,11 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',
+    
 
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
 ]
 
 MIDDLEWARE = [
@@ -125,16 +122,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/uploaded_files/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploaded_files')
 
-# AUTH
-AUTHENTICATION_BACKENDS = [
-# Needed to login by username in Django admin, regardless of 'allauth'
-'django.contrib.auth.backends.ModelBackend',
-# 'allauth' specific authentication methods, such as Login by e-mail
-'allauth.account.auth_backends.AuthenticationBackend',
-]
-
-LOGIN_URL = '/login/allauth'
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
-SITE_ID = 1
