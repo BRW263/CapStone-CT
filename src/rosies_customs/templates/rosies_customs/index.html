@@ -5,8 +5,8 @@
         {% for product in products %}
         <div class="col-12 col-sm-6 col-md-4 px-2 mb-3">
             <div class="card">
-                <img src="{{image.url}}" class="img-fluid" style="padding: 30px" alt="{{product.title}}">
-                <a href="{{image.url}}">{{image.url}}</a>
+                <img src="{{product.image.url}}" class="img-fluid" style="padding: 30px" alt="{{product.title}}">
+                <a href="{{product.image.url}}">{{image.url}}</a>
                 <div class="card-body">
                     <h5 class="card-title">{{product.title}}</h5>
                     <p class="card-text">

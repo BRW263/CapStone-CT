@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'users.apps.UsersConfig',
+    'crispy_forms',
     'rosies_customs',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -123,3 +124,5 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/uploaded_files/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploaded_files')
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
