@@ -54,12 +54,12 @@ PremadeTumblerOrderImage
  ## Time line.
  Week 1.
    research payment systems?
-   user management system
+  [X] user management system
    make models, enter size/background/effect data
 
     
  Week 2.
-   allow users to enter a order
+   allow users to enter an order
    style?
    pre-made tumbler order?
 
