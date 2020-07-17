@@ -1,16 +1,30 @@
 from django.db import models
 
 
+
 # Create your models here.
 
 class Product(models.Model):
-    title = models.CharField(max_length=50)
+    name = models.CharField(max_length=255)
+    description = models.TextField(null=True, blank=True)
     price = models.DecimalField(max_digits=4, decimal_places=2)
-    image = models.ImageField(upload_to='images/')
+    
+    slug = models.SlugField()
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+    update = models.DateTimeField(auto_now_add=False, auto_now=True)
+    active = models.BooleanField(default=True)
 
-class Item(models.Model):
-    title = models.CharField(max_length=50)
-    image = models.ImageField(upload_to='images/')
-    image2 = models.ImageField(upload_to='images/')
-    image3 = models.ImageField(upload_to='images/')
+    def __unicode__(self):
+        return self.product.name
+
+
+class ProductImage(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='products/images/')
+    featured = models.BooleanField(default=False)
+    thumnail = models.BooleanField(default=False)
+    active = models.BooleanField(default=True)
+    def __unicode__(self):
+        return self.product.title
+
     

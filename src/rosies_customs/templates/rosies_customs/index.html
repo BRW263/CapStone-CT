@@ -1,28 +1,31 @@
 {% extends 'base.html' %}
 {% block content %}
-    {% if products %}
-    <div class="row mx-2">
-        {% for product in products %}
-        <div class="col-12 col-sm-6 col-md-4 px-2 mb-3">
-            <div class="card">
-                <img src="{{product.image.url}}" class="img-fluid" style="padding: 30px" alt="{{product.title}}">
-                <a href="{{product.image.url}}">{{image.url}}</a>
-                <div class="card-body">
-                    <h5 class="card-title">{{product.title}}</h5>
-                    <p class="card-text">
-                        {{product.title}} <br> ${{product.price}}.
-                    </p>
-                    <p>
-                        <a href="item_view.html" class="btn btn-primary">View Item</a>
-                    </p>
-                    <a href="/" class="btn btn-secondary">Add to Cart</a>                 
-                </div>
+{% if products %}
+<div class="row mx-2">
+    {% for product in products %}
+    <div class="col-12 col-sm-6 col-md-4 px-2 mb-3">
+        <div class="card">
+            {% for item in product.productimage_set.all %}
+                {% if item.featured %}
+                    <img src="{{ MEDIA_URL }} {{ item.image.url }}" class="img-fluid" style="padding: 30px"/>
+                {% endif %}
+            {% endfor %}
+            <div class="card-body">
+                <h5 class="card-title">{{product.name}}</h5>
+                <p class="card-text">
+                <br> ${{product.price}}.
+                </p>
+                <p>
+                    <a href="single/" class="btn btn-primary">View Item</a>
+                </p>
+                <a href="carts/" class="btn btn-secondary">Add to Cart</a>
             </div>
         </div>
-        {% endfor %}
     </div>
-    {% else %}
-    <p>No products available.</p>
-    {% endif %}
+    {% endfor %}
+</div>
+{% else %}
+<p>No products available.</p>
+{% endif %}
 {% endblock %}
-<footer>© copyright 2020 Wicked liffe and Rosies Customs</footer>
+<footer>&copy; copyright 2020 Wicked liffe and Rosies Customs</footer>

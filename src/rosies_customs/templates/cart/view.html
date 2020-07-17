@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class='col-sm-8 col-sm-offset-2'>
+    <table class='table'>
+        <thead>
+            <th> <img src="{{ MEDIA_URL }} {{ item.image.url }}" class="img-fluid" style="padding: 30px"/></th>
+            <th>Item</th>
+            <th>Price</th>
+        </thead>
+        <tfoot>
+            <tr>
+                <td>
+                    <td>
+                        Total: {{ cart.total }}
+                    </td>
+                </td>
+            </tr>
+        </tfoot>
+        {% for item in cart.products.all %}
+        <tr>
+            <td>{{ product }}</td>
+            <td>{{ product.price }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

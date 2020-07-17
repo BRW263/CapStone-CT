@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'carts',
     'users.apps.UsersConfig',
     'crispy_forms',
     'rosies_customs',
@@ -108,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Los_Angeles'
 
 USE_I18N = True
 
@@ -120,12 +121,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+
 STATIC_URL = '/static/'
 
-MEDIA_URL = '/uploaded_files/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'uploaded_files')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static', 'media')
+
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static', 'static_root')
+
+STATICFILES_DIR = (
+    os.path.join(os.path.dirname(BASE_DIR), 'static', 'static_files')
+)
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'index'
 LOGIN_URL = 'login'
+

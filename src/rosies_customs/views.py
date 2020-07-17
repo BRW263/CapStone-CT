@@ -1,6 +1,7 @@
-from django.shortcuts import render
-from .models import Product
-from .models import Item
+from django.shortcuts import render, redirect
+from .models import Product, ProductImage
+
+
 
 # Create your views here.
 def index(request):
@@ -11,13 +12,11 @@ def index(request):
     }
     return render(request, 'rosies_customs/index.html', context)
 
-def item_view(request):
-    items = Item.objects.all()
-
+def single(request, slug):
+    product = Product.objects.get(slug=slug)
+    products = Product.objects.all()
     context = {
-        'items': items
+        'products': products
     }
-    return render(request, 'item_view.html', context)
-        
-
-
+    template = 'products/single.html'
+    return render(request, 'rosies_customs/index.html', context)
